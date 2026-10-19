@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Way Road Scene</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="scene">
+
+    <!-- Sky -->
+    <div class="sky">
+      <div class="cloud" style="top:20px; left:10%;"></div>
+      <div class="cloud" style="top:45px; left:55%;"></div>
+      <div class="sun"></div>
+    </div>
+
+    <!-- Top sidewalk -->
+    <div class="sidewalk top-sidewalk">
+      <div class="pedestrian" style="animation-duration: 8s;">🚶</div>
+      <div class="pedestrian" style="animation-duration: 11s; animation-delay: 2s;">🚶‍♀️</div>
+      <div class="pedestrian reverse" style="animation-duration: 9s; animation-delay: 4s;">🚶</div>
+    </div>
+
+    <!-- Road: two lanes, opposite directions -->
+    <div class="road">
+
+      <!-- Lane 1: cars moving right -->
+      <div class="lane lane-right">
+        <div class="lane-divider-line"></div>
+        <div class="car" style="animation-duration: 5s;">
+          <div class="car-body car-red"></div>
+          <div class="car-cabin cabin-red"></div>
+          <div class="wheel wheel-front"></div>
+          <div class="wheel wheel-back"></div>
+        </div>
+        <div class="car" style="animation-duration: 7s; animation-delay: 2.5s;">
+          <div class="car-body car-blue"></div>
+          <div class="car-cabin cabin-blue"></div>
+          <div class="wheel wheel-front"></div>
+          <div class="wheel wheel-back"></div>
+        </div>
+      </div>
+
+      <!-- Center divider -->
+      <div class="center-divider"></div>
+
+      <!-- Lane 2: cars moving left -->
+      <div class="lane lane-left">
+        <div class="lane-divider-line"></div>
+        <div class="car flipped" style="animation-duration: 6s; animation-delay: 1s;">
+          <div class="car-body car-green"></div>
+          <div class="car-cabin cabin-green"></div>
+          <div class="wheel wheel-front"></div>
+          <div class="wheel wheel-back"></div>
+        </div>
+        <div class="car flipped" style="animation-duration: 8s; animation-delay: 4s;">
+          <div class="car-body car-yellow"></div>
+          <div class="car-cabin cabin-yellow"></div>
+          <div class="wheel wheel-front"></div>
+          <div class="wheel wheel-back"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom sidewalk -->
+    <div class="sidewalk bottom-sidewalk">
+      <div class="pedestrian reverse" style="animation-duration: 10s;">🚶‍♂️</div>
+      <div class="pedestrian" style="animation-duration: 12s; animation-delay: 3s;">🚶‍♀️</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #eef2f5;
+}
+
+.scene {
+  position: relative;
+  width: 900px;
+  max-width: 95vw;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Sky */
+.sky {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background: #bcdff0;
+}
+
+.cloud {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: white;
+  border-radius: 20px;
+  opacity: 0.9;
+}
+
+.sun {
+  position: absolute;
+  top: 15px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background: #f2d24a;
+  border-radius: 50%;
+}
+
+/* Sidewalks */
+.sidewalk {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background: #cfcfcf;
+  border-top: 3px solid #a8a8a8;
+  border-bottom: 3px solid #a8a8a8;
+  overflow: hidden;
+}
+
+.pedestrian {
+  position: absolute;
+  bottom: 8px;
+  left: -40px;
+  font-size: 26px;
+  animation-name: walkRight;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pedestrian.reverse {
+  left: auto;
+  right: -40px;
+  animation-name: walkLeft;
+  transform: scaleX(-1);
+}
+
+@keyframes walkRight {
+  from { left: -40px; }
+  to { left: 100%; }
+}
+
+@keyframes walkLeft {
+  from { right: -40px; }
+  to { right: 100%; }
+}
+
+/* Road */
+.road {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: #3a3a3a;
+  display: flex;
+  flex-direction: column;
+}
+
+.lane {
+  position: relative;
+  height: 90px;
+  overflow: hidden;
+}
+
+.center-divider {
+  height: 20px;
+  background: repeating-linear-gradient(
+    to right,
+    #f2d24a 0px,
+    #f2d24a 30px,
+    transparent 30px,
+    transparent 55px
+  );
+}
+
+.lane-divider-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 200%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    #e0e0e0 0px,
+    #e0e0e0 25px,
+    transparent 25px,
+    transparent 50px
+  );
+  animation: dashMove 1.5s linear infinite;
+}
+
+@keyframes dashMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50px); }
+}
+
+/* Cars */
+.car {
+  position: absolute;
+  bottom: 15px;
+  left: -120px;
+  width: 90px;
+  height: 34px;
+  animation-name: driveRight;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.car.flipped {
+  transform: scaleX(-1);
+  animation-name: driveRight;
+}
+
+@keyframes driveRight {
+  from { left: -120px; }
+  to { left: 100%; }
+}
+
+.car-body {
+  position: absolute;
+  bottom: 10px;
+  width: 90px;
+  height: 20px;
+  border-radius: 6px;
+}
+
+.car-cabin {
+  position: absolute;
+  bottom: 26px;
+  left: 18px;
+  width: 44px;
+  height: 16px;
+  border-radius: 6px 6px 0 0;
+}
+
+.wheel {
+  position: absolute;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #222;
+  border: 3px solid #999;
+  animation: wheelSpin 0.5s linear infinite;
+}
+
+.wheel-front {
+  left: 10px;
+}
+
+.wheel-back {
+  right: 10px;
+}
+
+@keyframes wheelSpin {
+  to { transform: rotate(360deg); }
+}
+
+.car-red    { background: #d85a30; }
+.cabin-red  { background: #993c1d; }
+
+.car-blue   { background: #378add; }
+.cabin-blue { background: #185fa5; }
+
+.car-green  { background: #639922; }
+.cabin-green{ background: #3b6d11; }
+
+.car-yellow { background: #f2d24a; }
+.cabin-yellow{ background: #ba7517; }
